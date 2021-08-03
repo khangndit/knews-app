@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/knews-app/static/js/main.a130800d.chunk.js",
+    "main.js.map": "/knews-app/static/js/main.a130800d.chunk.js.map",
+    "runtime-main.js": "/knews-app/static/js/runtime-main.d11e521d.js",
+    "runtime-main.js.map": "/knews-app/static/js/runtime-main.d11e521d.js.map",
+    "static/css/2.8ac5ba96.chunk.css": "/knews-app/static/css/2.8ac5ba96.chunk.css",
+    "static/js/2.1cdfd302.chunk.js": "/knews-app/static/js/2.1cdfd302.chunk.js",
+    "static/js/2.1cdfd302.chunk.js.map": "/knews-app/static/js/2.1cdfd302.chunk.js.map",
+    "index.html": "/knews-app/index.html",
+    "static/css/2.8ac5ba96.chunk.css.map": "/knews-app/static/css/2.8ac5ba96.chunk.css.map",
+    "static/js/2.1cdfd302.chunk.js.LICENSE.txt": "/knews-app/static/js/2.1cdfd302.chunk.js.LICENSE.txt",
+    "static/media/ads.4cbf166a.png": "/knews-app/static/media/ads.4cbf166a.png",
+    "static/media/logo.849333a1.png": "/knews-app/static/media/logo.849333a1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d11e521d.js",
+    "static/css/2.8ac5ba96.chunk.css",
+    "static/js/2.1cdfd302.chunk.js",
+    "static/js/main.a130800d.chunk.js"
+  ]
+}
