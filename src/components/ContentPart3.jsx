@@ -29,7 +29,7 @@ const ContentPart3 = () => {
     <Wrapper>
       <Container>
         <TitlePartTag>
-          <TitlePart>MỚI VỪA</TitlePart>
+          <TitlePart>TIN MỚI</TitlePart>
         </TitlePartTag>
         <Row gutter={[30, 30]}>
           {dataPart3.map((el, idx) => {

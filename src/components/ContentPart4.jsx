@@ -29,7 +29,7 @@ const ContentPart4 = () => {
     <Wrapper>
       <Container>
         <TitlePartTag>
-          <TitlePart>MỚI HƠI VỪA</TitlePart>
+          <TitlePart>TIN YÊU THÍCH</TitlePart>
         </TitlePartTag>
         <div style={{ display: 'flex' }}>
           <ContentLeft>
