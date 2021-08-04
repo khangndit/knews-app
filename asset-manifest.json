@@ -1,22 +1,34 @@
 {
   "files": {
-    "main.js": "/knews-app/static/js/main.76fea86f.chunk.js",
-    "main.js.map": "/knews-app/static/js/main.76fea86f.chunk.js.map",
-    "runtime-main.js": "/knews-app/static/js/runtime-main.d11e521d.js",
-    "runtime-main.js.map": "/knews-app/static/js/runtime-main.d11e521d.js.map",
+    "main.js": "/knews-app/static/js/main.3d487f48.chunk.js",
+    "main.js.map": "/knews-app/static/js/main.3d487f48.chunk.js.map",
+    "runtime-main.js": "/knews-app/static/js/runtime-main.a9f1d0a6.js",
+    "runtime-main.js.map": "/knews-app/static/js/runtime-main.a9f1d0a6.js.map",
     "static/css/2.8ac5ba96.chunk.css": "/knews-app/static/css/2.8ac5ba96.chunk.css",
-    "static/js/2.1cdfd302.chunk.js": "/knews-app/static/js/2.1cdfd302.chunk.js",
-    "static/js/2.1cdfd302.chunk.js.map": "/knews-app/static/js/2.1cdfd302.chunk.js.map",
+    "static/js/2.f73c0b93.chunk.js": "/knews-app/static/js/2.f73c0b93.chunk.js",
+    "static/js/2.f73c0b93.chunk.js.map": "/knews-app/static/js/2.f73c0b93.chunk.js.map",
+    "static/js/3.df944bcb.chunk.js": "/knews-app/static/js/3.df944bcb.chunk.js",
+    "static/js/3.df944bcb.chunk.js.map": "/knews-app/static/js/3.df944bcb.chunk.js.map",
+    "static/js/4.d93cbf98.chunk.js": "/knews-app/static/js/4.d93cbf98.chunk.js",
+    "static/js/4.d93cbf98.chunk.js.map": "/knews-app/static/js/4.d93cbf98.chunk.js.map",
+    "static/js/5.cc1a3253.chunk.js": "/knews-app/static/js/5.cc1a3253.chunk.js",
+    "static/js/5.cc1a3253.chunk.js.map": "/knews-app/static/js/5.cc1a3253.chunk.js.map",
+    "static/js/6.34e42ff4.chunk.js": "/knews-app/static/js/6.34e42ff4.chunk.js",
+    "static/js/6.34e42ff4.chunk.js.map": "/knews-app/static/js/6.34e42ff4.chunk.js.map",
+    "static/js/7.6a2b37cd.chunk.js": "/knews-app/static/js/7.6a2b37cd.chunk.js",
+    "static/js/7.6a2b37cd.chunk.js.map": "/knews-app/static/js/7.6a2b37cd.chunk.js.map",
+    "static/js/8.dd931742.chunk.js": "/knews-app/static/js/8.dd931742.chunk.js",
+    "static/js/8.dd931742.chunk.js.map": "/knews-app/static/js/8.dd931742.chunk.js.map",
     "index.html": "/knews-app/index.html",
     "static/css/2.8ac5ba96.chunk.css.map": "/knews-app/static/css/2.8ac5ba96.chunk.css.map",
-    "static/js/2.1cdfd302.chunk.js.LICENSE.txt": "/knews-app/static/js/2.1cdfd302.chunk.js.LICENSE.txt",
+    "static/js/2.f73c0b93.chunk.js.LICENSE.txt": "/knews-app/static/js/2.f73c0b93.chunk.js.LICENSE.txt",
     "static/media/ads.4cbf166a.png": "/knews-app/static/media/ads.4cbf166a.png",
     "static/media/logo.849333a1.png": "/knews-app/static/media/logo.849333a1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d11e521d.js",
+    "static/js/runtime-main.a9f1d0a6.js",
     "static/css/2.8ac5ba96.chunk.css",
-    "static/js/2.1cdfd302.chunk.js",
-    "static/js/main.76fea86f.chunk.js"
+    "static/js/2.f73c0b93.chunk.js",
+    "static/js/main.3d487f48.chunk.js"
   ]
 }
