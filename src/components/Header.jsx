@@ -20,7 +20,7 @@ const Header = ({ toggleTheme }) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setTemperature(data.main.temp);
+        setTemperature(Math.round(data.main.temp));
       });
   }, []);
 
