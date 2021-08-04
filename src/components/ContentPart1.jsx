@@ -34,21 +34,21 @@ const ContentPart1 = () => {
     <Wrapper>
       <Container>
         <Row>
-          <Col xl={14} md={14} sm={24}>
-            {dataPart1.length === 0 ? (
-              <Loading />
-            ) : (
+          {dataPart1.length === 0 ? (
+            <Loading />
+          ) : (
+            <Col xl={14} md={14} sm={24}>
               <Suspense fallback={<Loading />}>
                 <TopStory>
                   <StoryMain data={dataPart1[0]} />
                 </TopStory>
               </Suspense>
-            )}
-          </Col>
-          <Col xl={10} md={10} sm={24}>
-            {dataPart1SideBar.length === 0 ? (
-              <Loading />
-            ) : (
+            </Col>
+          )}
+          {dataPart1SideBar.length === 0 ? (
+            <Loading />
+          ) : (
+            <Col xl={10} md={10} sm={24}>
               <SideBarStory>
                 {dataPart1SideBar.map((el, idx) => {
                   return (
@@ -64,8 +64,8 @@ const ContentPart1 = () => {
                   );
                 })}
               </SideBarStory>
-            )}
-          </Col>
+            </Col>
+          )}
         </Row>
       </Container>
     </Wrapper>
