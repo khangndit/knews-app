@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/knews-app/static/js/main.3d487f48.chunk.js",
-    "main.js.map": "/knews-app/static/js/main.3d487f48.chunk.js.map",
+    "main.js": "/knews-app/static/js/main.e4e9a332.chunk.js",
+    "main.js.map": "/knews-app/static/js/main.e4e9a332.chunk.js.map",
     "runtime-main.js": "/knews-app/static/js/runtime-main.a9f1d0a6.js",
     "runtime-main.js.map": "/knews-app/static/js/runtime-main.a9f1d0a6.js.map",
     "static/css/2.8ac5ba96.chunk.css": "/knews-app/static/css/2.8ac5ba96.chunk.css",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.a9f1d0a6.js",
     "static/css/2.8ac5ba96.chunk.css",
     "static/js/2.f73c0b93.chunk.js",
-    "static/js/main.3d487f48.chunk.js"
+    "static/js/main.e4e9a332.chunk.js"
   ]
 }
