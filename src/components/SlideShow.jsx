@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import SlideShowItem from '../common/SlideShowItem';
 import crawlerDataApi from '../shared/api/crawlerDataApi';
+import Loading from '../common/Loading';
+const SlideShowItem = lazy(() => import('../common/SlideShowItem'));
 
 const SlideShow = () => {
   const [dataSlideShow, setDataSlideShow] = useState([]);
@@ -20,18 +21,24 @@ const SlideShow = () => {
     <Wrapper>
       <Container>
         <div className="slide-container">
-          <Slide>
-            {dataSlideShow.map((el, idx) => {
-              if (idx % 2 === 0) {
-                return (
-                  <div className="each-slide" key={idx}>
-                    <SlideShowItem data={el} />
-                    <SlideShowItem data={dataSlideShow[idx + 1]} />
-                  </div>
-                );
-              }
-            })}
-          </Slide>
+          {dataSlideShow.length === 0 ? (
+            <Loading />
+          ) : (
+            <Slide>
+              {dataSlideShow.map((el, idx) => {
+                if (idx % 2 === 0) {
+                  return (
+                    <div className="each-slide" key={idx}>
+                      <Suspense fallback={<Loading />}>
+                        <SlideShowItem data={el} />
+                        <SlideShowItem data={dataSlideShow[idx + 1]} />
+                      </Suspense>
+                    </div>
+                  );
+                }
+              })}
+            </Slide>
+          )}
         </div>
       </Container>
     </Wrapper>

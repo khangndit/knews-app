@@ -1,9 +1,11 @@
 import { Col, Row } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Loading from '../common/Loading';
 import MoreBtn from '../common/MoreBtn';
-import StoryBodyPart3 from '../common/StoryBodyPart3';
 import crawlerDataApi from '../shared/api/crawlerDataApi';
+
+const StoryBodyPart3 = lazy(() => import('../common/StoryBodyPart3'));
 
 const ContentPart2 = () => {
   const [dataPart2, setdataPart2] = useState([]);
@@ -31,15 +33,21 @@ const ContentPart2 = () => {
         <TitlePartTag>
           <TitlePart>TIN NÓNG</TitlePart>
         </TitlePartTag>
-        <Row gutter={[28, 28]}>
-          {dataPart2.map((el, idx) => {
-            return (
-              <Col key={idx} xl={12} md={12} sm={24}>
-                <StoryBodyPart3 data={el} />
-              </Col>
-            );
-          })}
-        </Row>
+        {dataPart2.length === 0 ? (
+          <Loading />
+        ) : (
+          <Row gutter={[28, 28]}>
+            {dataPart2.map((el, idx) => {
+              return (
+                <Col key={idx} xl={12} md={12} sm={24}>
+                  <Suspense fallback={<Loading />}>
+                    <StoryBodyPart3 data={el} />
+                  </Suspense>
+                </Col>
+              );
+            })}
+          </Row>
+        )}
         <MoreBtnTag>
           <MoreBtn onClick={() => fetchDataNextStep()} isLoading={loading} />
         </MoreBtnTag>

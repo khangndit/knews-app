@@ -17,8 +17,8 @@ const Footer = () => {
           <Col xl={8} md={8} sm={12} span={24}>
             <ItemTag>
               <p>Báo tiếng Việt nhiều người xem nhất</p>
-              <p>Thuộc Bộ Khoa học Công nghệ</p>
-              <p>06/GP-BTTTT ngày 03/01/2014 </p>
+              <p>Thuộc NGUYỄN DUY KHANG</p>
+              <p>K-NEWS</p>
             </ItemTag>
           </Col>
           <Col xl={8} md={8} sm={12} span={24}>

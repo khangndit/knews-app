@@ -1,9 +1,10 @@
 import { Col, Row } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import SideBarMain from '../common/SideBarMain';
-import StoryMain from '../common/StoryMain';
+import Loading from '../common/Loading';
 import crawlerDataApi from '../shared/api/crawlerDataApi';
+const StoryMain = lazy(() => import('../common/StoryMain'));
+const SideBarMain = lazy(() => import('../common/SideBarMain'));
 
 const ContentPart1 = () => {
   const [dataPart1, setDataPart1] = useState([]);
@@ -34,24 +35,36 @@ const ContentPart1 = () => {
       <Container>
         <Row>
           <Col xl={14} md={14} sm={24}>
-            <TopStory>
-              <StoryMain data={dataPart1[0]} />
-            </TopStory>
+            {dataPart1.length === 0 ? (
+              <Loading />
+            ) : (
+              <Suspense fallback={<Loading />}>
+                <TopStory>
+                  <StoryMain data={dataPart1[0]} />
+                </TopStory>
+              </Suspense>
+            )}
           </Col>
           <Col xl={10} md={10} sm={24}>
-            <SideBarStory>
-              {dataPart1SideBar.map((el, idx) => {
-                return (
-                  <SideBarItem key={idx}>
-                    <SideBarMain
-                      data={el}
-                      isBorder={isBorderArr[idx]}
-                      categories={isCategoriesArr[idx]}
-                    />
-                  </SideBarItem>
-                );
-              })}
-            </SideBarStory>
+            {dataPart1SideBar.length === 0 ? (
+              <Loading />
+            ) : (
+              <SideBarStory>
+                {dataPart1SideBar.map((el, idx) => {
+                  return (
+                    <SideBarItem key={idx}>
+                      <Suspense fallback={<Loading />}>
+                        <SideBarMain
+                          data={el}
+                          isBorder={isBorderArr[idx]}
+                          categories={isCategoriesArr[idx]}
+                        />
+                      </Suspense>
+                    </SideBarItem>
+                  );
+                })}
+              </SideBarStory>
+            )}
           </Col>
         </Row>
       </Container>
@@ -83,7 +96,8 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     ${SideBarStory} {
       margin-top: 30px;
-      padding: 0;
+      padding-left: 5px;
+      margin-top: 5px;
     }
   }
 

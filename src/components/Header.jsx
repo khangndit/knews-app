@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
 import Logo from '../assets/img/logo.png';
@@ -6,8 +6,55 @@ import { Avatar } from 'antd';
 import { AlertOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 import { SmileOutlined, BulbOutlined } from '@ant-design/icons';
+import moment from 'moment';
 
 const Header = ({ toggleTheme }) => {
+  const [date, setDate] = useState('');
+  const [temperature, setTemperature] = useState('');
+
+  useEffect(() => {
+    const api_key = 'f0283990e0581e2d7e1b7c41996132e9';
+    const city = 'ho chi minh';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setTemperature(data.main.temp);
+      });
+  }, []);
+
+  useEffect(() => {
+    const day = new window.Date().getDay();
+    let result = moment(new window.Date()).format('DD/MM/YYYY');
+    switch (day) {
+      case 0:
+        result = 'Chủ nhật, ' + result;
+        break;
+      case 1:
+        result = 'Thứ 2, ' + result;
+        break;
+      case 2:
+        result = 'Thứ 3, ' + result;
+        break;
+      case 3:
+        result = 'Thứ 4, ' + result;
+        break;
+      case 4:
+        result = 'Thứ 5, ' + result;
+        break;
+      case 5:
+        result = 'Thứ 6, ' + result;
+        break;
+      case 6:
+        result = 'Thứ 7, ' + result;
+        break;
+      default:
+        break;
+    }
+    setDate(result);
+  }, []);
+
   return (
     <Wrapper>
       <div className="container">
@@ -19,13 +66,13 @@ const Header = ({ toggleTheme }) => {
           </Col>
           <Col xl={4} md={6} sm={7} span={14}>
             <Date>
-              <span>Chủ nhật, 01/08/2021</span>
+              <span>{date}</span>
             </Date>
           </Col>
           <Col xl={4} md={4} sm={4} span={0}>
             <Weather>
               <AlertOutlined />
-              <span> 28°C 23°F</span>
+              <span>Hồ Chí Minh: {temperature}°C</span>
             </Weather>
           </Col>
           <Col xl={12} md={9} sm={6} span={4}>

@@ -1,38 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
-import Categories from './Categories';
-import { ClockCircleOutlined } from '@ant-design/icons';
 import LinkBlank from './LinkBlank';
+import MoreInfo from './MoreInfo';
 
 const StoryMain = ({ data }) => {
   return (
     <Wrapper>
       <LinkBlank url={data?.href}>
         <BackgroundImage imgUrl={data?.imageUrl}>
-          <CategoriesTag>
-            <Categories name="THỜI SỰ" />
-          </CategoriesTag>
           <TitleTag>
             <Title>{data?.title}</Title>
           </TitleTag>
-          <MoreInfoTag>
-            <ClockCircleOutlined style={{ fontSize: 12, color: '#fff' }} />
-            <span>2 GIỜ TRƯỚC</span>
-          </MoreInfoTag>
+          <DescriptionTag>
+            <Description>{data?.description}</Description>
+          </DescriptionTag>
+          <MoreInfo />
         </BackgroundImage>
       </LinkBlank>
     </Wrapper>
   );
 };
 
-const MoreInfoTag = styled.div`
-  width: 100%;
-  margin: 8px 0;
-  span {
-    color: #fff;
-    font-size: 10px;
-    margin-right: 5px;
+const Description = styled.p.attrs({
+  className: 'text-max-3 hover-title',
+})`
+  line-height: 18px;
+  margin: 5px 20px 8px 0;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  :hover {
+    background: #fff;
+    padding: 3px;
+    border-radius: 5px;
+    transition: 0.3s;
   }
+`;
+
+const DescriptionTag = styled.div`
+  width: 100%;
+  margin-top: 5px;
 `;
 
 const Title = styled.h1.attrs({
@@ -40,7 +47,7 @@ const Title = styled.h1.attrs({
 })`
   color: #fff;
   font-weight: 550;
-  line-height: 33px;
+  line-height: 30px;
   cursor: pointer;
   margin-right: 20px;
   :hover {
@@ -64,6 +71,7 @@ const BackgroundImage = styled.div`
   padding-left: 20px;
   border-radius: 5px;
   cursor: pointer;
+  padding-bottom: 15px;
 
   background-image: url(${(props) => props.imgUrl});
   background-repeat: no-repeat;
@@ -78,6 +86,10 @@ const BackgroundImage = styled.div`
 
   :hover {
     transform: scale(1.01);
+  }
+
+  span {
+    color: #fff;
   }
 `;
 

@@ -1,8 +1,10 @@
 import { AlignLeftOutlined, IssuesCloseOutlined } from '@ant-design/icons';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const MoreInfo = () => {
+  const [hour, setHour] = useState(0);
+
   const categoriesArr = [
     'THỜI SỰ',
     'GÓC NHÌN',
@@ -17,17 +19,20 @@ const MoreInfo = () => {
     'DU LỊCH',
     'SỨC KHOẺ',
   ];
-  const hourArr = Math.floor(Math.random() * 12);
+
+  useEffect(() => {
+    setHour(Math.floor(Math.random() * 12));
+  }, []);
 
   return (
     <Wrapper>
       <div>
         <AlignLeftOutlined />
-        <span>{categoriesArr[hourArr]}</span>
+        <span>{categoriesArr[hour]}</span>
       </div>
       <div>
         <IssuesCloseOutlined />
-        <span>{hourArr} GIỜ TRƯỚC</span>
+        <span>{hour} GIỜ TRƯỚC</span>
       </div>
     </Wrapper>
   );

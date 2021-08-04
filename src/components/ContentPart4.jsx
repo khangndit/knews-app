@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import MoreBtn from '../common/MoreBtn';
-import StoryBodyPart2 from '../common/StoryBodyPart2';
+// import StoryBodyPart2 from '../common/StoryBodyPart2';
 import AdsDemo from '../assets/img/ads.png';
 import crawlerDataApi from '../shared/api/crawlerDataApi';
+import Loading from '../common/Loading';
+
+const StoryBodyPart2 = lazy(() => import('../common/StoryBodyPart2'));
 
 const ContentPart4 = () => {
   const [dataPart4, setdataPart4] = useState([]);
@@ -32,15 +35,22 @@ const ContentPart4 = () => {
           <TitlePart>TIN YÊU THÍCH</TitlePart>
         </TitlePartTag>
         <div style={{ display: 'flex' }}>
-          <ContentLeft>
-            {dataPart4.map((el, idx) => {
-              return (
-                <ContentItem key={idx}>
-                  <StoryBodyPart2 data={el} />
-                </ContentItem>
-              );
-            })}
-          </ContentLeft>
+          {dataPart4.length === 0 ? (
+            <Loading />
+          ) : (
+            <ContentLeft>
+              {dataPart4.map((el, idx) => {
+                return (
+                  <ContentItem key={idx}>
+                    <Suspense fallback={<Loading />}>
+                      <StoryBodyPart2 data={el} />
+                    </Suspense>
+                  </ContentItem>
+                );
+              })}
+            </ContentLeft>
+          )}
+
           <ContentRight>
             <Image src={AdsDemo} />
           </ContentRight>

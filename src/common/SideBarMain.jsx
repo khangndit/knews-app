@@ -82,6 +82,7 @@ const Wrapper = styled.div`
   width: 100%;
   position: relative;
   border-bottom: ${(props) => (props.border ? '1px solid #d9d9d9' : 'none')};
+  margin-top: 5px;
 
   @media (max-width: 1024px) {
     ${ImageTag} {
