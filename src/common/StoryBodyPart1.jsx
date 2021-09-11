@@ -94,7 +94,7 @@ const ImageTag = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   border-radius: 5px;
   @media (max-width: 576px) {
     padding: 20px;

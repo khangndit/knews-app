@@ -71,7 +71,7 @@ const TitlePartTag = styled.div`
 
 const TitlePart = styled.h1`
   color: #ff4d4f;
-  font-family: 'Baloo Bhai';
+  font-weight: 600;
 `;
 
 const Container = styled.div.attrs({

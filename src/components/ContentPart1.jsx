@@ -3,6 +3,7 @@ import React, { lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Loading from '../common/Loading';
 import crawlerDataApi from '../shared/api/crawlerDataApi';
+import { ShimmerFeaturedGallery } from 'react-shimmer-effects';
 const StoryMain = lazy(() => import('../common/StoryMain'));
 const SideBarMain = lazy(() => import('../common/SideBarMain'));
 
@@ -35,7 +36,7 @@ const ContentPart1 = () => {
       <Container>
         <Row>
           {dataPart1.length === 0 ? (
-            <Loading />
+            <ShimmerFeaturedGallery row={3} col={2} card frameHeight={500} />
           ) : (
             <Col xl={14} md={14} sm={24}>
               <Suspense fallback={<Loading />}>
